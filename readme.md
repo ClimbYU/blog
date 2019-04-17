@@ -3,7 +3,7 @@
  ### [策略模式](https://github.com/ClimbYU/design-patterns/blob/master/Strategy.html)
  ### [代理模式](https://github.com/ClimbYU/design-patterns/blob/master/Proxy.html)
  ### [迭代器模式](https://github.com/ClimbYU/design-patterns/blob/master/Iterator.html)
- ### [发布订阅模式]
+ ### [发布订阅模式](https://github.com/ClimbYU/design-patterns/blob/master/publish-subscription.html)
  ### [装饰者模式]
  ### [适配器模式]
 
