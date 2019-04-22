@@ -32,4 +32,5 @@
 
 ## 面试
  ### 常用算法
+ ### [动手实现一个AMD模块加载器](https://github.com/huruji/blog/issues/13)
 
