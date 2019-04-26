@@ -31,6 +31,6 @@
 ## Nodejs
 
 ## 面试
- ### 常用算法
+ ### [常用算法](https://github.com/ClimbYU/blog/issues/1)
  ### [动手实现一个AMD模块加载器](https://github.com/huruji/blog/issues/13)
 
