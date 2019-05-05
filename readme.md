@@ -35,4 +35,4 @@
  ### [实现promise]
  ### [javascript按值传递---转载](https://github.com/mqyqingfeng/Blog/issues/10)
  ### [javascript词法作用域---转载](https://github.com/mqyqingfeng/Blog/issues/3)
-
+ ### [JavaScript之call和apply的模拟实现]
