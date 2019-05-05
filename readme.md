@@ -5,7 +5,6 @@
  ### [迭代器模式](https://github.com/ClimbYU/design-patterns/blob/master/Iterator.html)
  ### [发布订阅模式](https://github.com/ClimbYU/design-patterns/blob/master/publish-subscription.html)
  ### [装饰者模式](https://github.com/ClimbYU/design-patterns/blob/master/decorator.html)
- ### [适配器模式]
 
 ## [React](https://github.com/ClimbYU/react-core-learn)
  ### [React事件机制](https://github.com/ClimbYU/react-core-learn/issues)
