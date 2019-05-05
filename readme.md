@@ -33,4 +33,5 @@
  ### [常用算法](https://github.com/ClimbYU/blog/issues/1)
  ### [动手实现一个AMD模块加载器](https://github.com/huruji/blog/issues/13)
  ### [实现promise]
+ ### [javascript按值传递] (https://github.com/mqyqingfeng/Blog/issues/10)
 
