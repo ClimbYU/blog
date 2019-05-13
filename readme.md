@@ -62,7 +62,7 @@
    #### []
 ### 3.网络部分
   #### cookie与localStorage
-### 4.React (https://github.com/wx-chevalier/Web-Series/tree/master/React)
+### 4.React(https://github.com/wx-chevalier/Web-Series/tree/master/React)
 ### 5.VUE
    #### Vue的简单实现
 
