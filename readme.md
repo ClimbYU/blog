@@ -39,7 +39,7 @@
    #### [New的手动实现](https://github.com/ClimbYU/blog/issues/3)
    #### [javascript按值传递---转载](https://github.com/mqyqingfeng/Blog/issues/10)
    #### [javascript词法作用域---转载](https://github.com/mqyqingfeng/Blog/issues/3)
-   #### [JavaScript之call和apply,bind的模拟实现]
+   #### [JavaScript之call和apply,bind的模拟实现](https://github.com/ClimbYU/blog/issues/4)
    #### [Javascript的继承方式]
    #### [防抖与节流]]
    #### [Javascript类型判断]
