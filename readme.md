@@ -30,6 +30,8 @@
 ## Nodejs
 
 ## Nextjs源码
+## 其他
+ ### [前端埋点为什么常用gif](https://toutiao.io/posts/xpy6p8/preview)
 
 ## 面试
 ### 1.Js系列
