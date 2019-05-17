@@ -43,7 +43,7 @@
    #### [javascript词法作用域---转载](https://github.com/mqyqingfeng/Blog/issues/3)
    #### [JavaScript之call和apply,bind的模拟实现](https://github.com/ClimbYU/blog/issues/4)
    #### [Javascript的继承方式](https://github.com/ClimbYU/blog/issues/5)
-   #### [防抖与节流]]
+   #### [节流与防抖](https://github.com/ClimbYU/blog/issues/6)
    #### [Javascript类型判断]
    #### [Javascript深拷贝与浅拷贝]
    #### [数组去重]
