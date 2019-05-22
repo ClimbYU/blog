@@ -44,7 +44,7 @@
    #### [JavaScript之call和apply,bind的模拟实现](https://github.com/ClimbYU/blog/issues/4)
    #### [Javascript的继承方式](https://github.com/ClimbYU/blog/issues/5)
    #### [节流与防抖](https://github.com/ClimbYU/blog/issues/6)
-   #### [Javascript类型判断]
+   #### [Javascript类型判断](https://github.com/ClimbYU/blog/issues/7)
    #### [Javascript深拷贝与浅拷贝]
    #### [数组去重]
    #### [数组扁平化]
