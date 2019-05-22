@@ -48,7 +48,7 @@
    #### [Javascript深拷贝与浅拷贝]
    #### [数组去重]
    #### [数组扁平化]
-   #### [函数柯里化]
+   #### [函数柯里化](https://github.com/ClimbYU/blog/issues/8)
    #### [函数组合]
    #### [判断两个对象相等]
    #### [完成函数getViewportSize返回指定窗口的视口尺寸](https://github.com/qiu-deqing/FE-interview#%E5%AE%8C%E6%88%90%E5%87%BD%E6%95%B0getviewportsize%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E7%AA%97%E5%8F%A3%E7%9A%84%E8%A7%86%E5%8F%A3%E5%B0%BA%E5%AF%B8)
