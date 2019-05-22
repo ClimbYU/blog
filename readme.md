@@ -45,7 +45,7 @@
    #### [Javascript的继承方式](https://github.com/ClimbYU/blog/issues/5)
    #### [节流与防抖](https://github.com/ClimbYU/blog/issues/6)
    #### [Javascript类型判断](https://github.com/ClimbYU/blog/issues/7)
-   #### [Javascript深拷贝与浅拷贝]
+   #### [Javascript深拷贝与浅拷贝](https://github.com/ClimbYU/blog/issues/9)
    #### [数组去重]
    #### [数组扁平化]
    #### [函数柯里化](https://github.com/ClimbYU/blog/issues/8)
