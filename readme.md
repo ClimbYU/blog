@@ -47,7 +47,6 @@
    #### [Javascript类型判断](https://github.com/ClimbYU/blog/issues/7)
    #### [Javascript深拷贝与浅拷贝](https://github.com/ClimbYU/blog/issues/9)
    #### [数组去重]
-   #### [数组扁平化]
    #### [函数柯里化](https://github.com/ClimbYU/blog/issues/8)
    #### [函数组合]
    #### [判断两个对象相等]
