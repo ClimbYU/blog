@@ -52,6 +52,7 @@
    #### [判断两个对象相等---转载](https://github.com/mqyqingfeng/Blog/issues/41)
    #### [完成函数getViewportSize返回指定窗口的视口尺寸](https://github.com/qiu-deqing/FE-interview#%E5%AE%8C%E6%88%90%E5%87%BD%E6%95%B0getviewportsize%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E7%AA%97%E5%8F%A3%E7%9A%84%E8%A7%86%E5%8F%A3%E5%B0%BA%E5%AF%B8)
    #### [完成函数getScrollOffset返回窗口滚动条偏移量](https://github.com/qiu-deqing/FE-interview#%E5%AE%8C%E6%88%90%E5%87%BD%E6%95%B0getscrolloffset%E8%BF%94%E5%9B%9E%E7%AA%97%E5%8F%A3%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%81%8F%E7%A7%BB%E9%87%8F)
+   #### [获取元素在可视区的位置]
    #### [通用事件绑定方法]
    #### [手写ajax]
    #### [简析事件代理与事件委托]
