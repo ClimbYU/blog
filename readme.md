@@ -54,7 +54,7 @@
    #### [完成函数getScrollOffset返回窗口滚动条偏移量](https://github.com/qiu-deqing/FE-interview#%E5%AE%8C%E6%88%90%E5%87%BD%E6%95%B0getscrolloffset%E8%BF%94%E5%9B%9E%E7%AA%97%E5%8F%A3%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%81%8F%E7%A7%BB%E9%87%8F)
    #### [获取元素在可视区的位置](https://github.com/ClimbYU/blog/issues/12)
    #### [通用事件绑定方法](https://github.com/ClimbYU/blog/issues/13)
-   #### [手写ajax]
+   #### [手写ajax](https://github.com/ClimbYU/blog/issues/14)
    #### [简析事件代理与事件委托]
    #### [手动实现懒加载，按需加载]
    #### [同源策略]
