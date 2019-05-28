@@ -38,6 +38,7 @@
    #### [常用算法](https://github.com/ClimbYU/blog/issues/1)
    #### [动手实现一个AMD模块加载器](https://github.com/huruji/blog/issues/13)
    #### [实现promise]
+   #### [promise.all的异常处理---转载](https://zhuanlan.zhihu.com/p/37728714)
    #### [New的手动实现](https://github.com/ClimbYU/blog/issues/3)
    #### [javascript按值传递---转载](https://github.com/mqyqingfeng/Blog/issues/10)
    #### [javascript词法作用域---转载](https://github.com/mqyqingfeng/Blog/issues/3)
