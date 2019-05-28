@@ -59,6 +59,7 @@
    #### [手动实现懒加载，按需加载](https://github.com/ClimbYU/react-lazy-demo)
    #### [同源策略]
    #### [数组的22种常用方法]
+   #### [for循环，map遍历，forEach，for-of，filter，every，some，reduce，find，findindex]
 ### 2.CSS
    #### [水平居中的几种方式，垂直居中的几种方式，水平垂直居中的集中方式]
    #### []
