@@ -64,6 +64,7 @@
 ### 2.CSS
    #### [水平居中的几种方式，垂直居中的几种方式，水平垂直居中的集中方式]
    #### [页面布局----转载](https://www.cnblogs.com/best/category/313045.html)
+   #### [重置浏览器默认样式]
 ### 3.网络部分
   #### cookie与localStorage
 ### 4.[React](https://github.com/wx-chevalier/Web-Series/tree/master/React)
