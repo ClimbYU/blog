@@ -36,7 +36,7 @@
 ## 面试
 ### 1.Js系列
    #### [常用算法](https://github.com/ClimbYU/blog/issues/1)
-   #### [前端路由的实现---转载]
+   #### [前端路由的实现---转载](https://juejin.im/post/5ac61da66fb9a028c71eae1b)
    #### [动手实现一个AMD模块加载器---转载](https://github.com/huruji/blog/issues/13)
    #### [实现promise](https://github.com/ClimbYU/blog/issues/2)
    #### [promise.all的异常处理---转载](https://zhuanlan.zhihu.com/p/37728714)
