@@ -37,7 +37,7 @@
 ### 1.Js系列
    #### [常用算法](https://github.com/ClimbYU/blog/issues/1)
    #### [动手实现一个AMD模块加载器](https://github.com/huruji/blog/issues/13)
-   #### [实现promise]
+   #### [实现promise](https://github.com/ClimbYU/blog/issues/2)
    #### [promise.all的异常处理---转载](https://zhuanlan.zhihu.com/p/37728714)
    #### [New的手动实现](https://github.com/ClimbYU/blog/issues/3)
    #### [javascript按值传递---转载](https://github.com/mqyqingfeng/Blog/issues/10)
