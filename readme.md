@@ -65,10 +65,12 @@
 ### 2.CSS
    #### [水平居中的几种方式，垂直居中的几种方式，水平垂直居中的集中方式](https://github.com/ClimbYU/css-layout)
    #### [页面布局----转载](https://www.cnblogs.com/best/category/313045.html)
-   #### [设置rem]
+   #### [设置rem](https://github.com/ClimbYU/blog/issues/18)
    #### [事件循环：eventLoop]
 ### 3.网络部分
   #### cookie与localStorage
+  #### [跨域解决---转载](https://juejin.im/post/5a2f92c65188253e2470f16d)
+  #### [浏览器缓存--转载](https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651553545&idx=2&sn=71efd68546b1c34485c0133053d4c693&chksm=8025a8c8b75221dedd749d7c3fab852850198384b8dfee2f57e3986cd27fdd674a6986e96d8b&mpshare=1&scene=1&srcid=0122ShhzID444X9ApFFwDf2X&key=3200a59e5c1504c23d44c2bffa417028c160a038e89269681d107fde2847aa65df9e79b7cb303545f71cdcc931a037706673767f93d9874e20b660665920a700cf0134545ede72d1459126ecd29ad3c4&ascene=1&uin=MjIzNjc1MDQw&devicetype=Windows+10&version=62060739&lang=zh_CN&pass_ticket=GzH2VDY%2B49%2FY423n1pj%2FaKS2xJOphPwd%2BY0JAHP7Cf0%3D)
 ### 4.[React](https://github.com/wx-chevalier/Web-Series/tree/master/React)
 ### 5.VUE
    #### Vue的简单实现
