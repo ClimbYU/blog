@@ -65,7 +65,7 @@
 ### 2.CSS
    #### [水平居中的几种方式，垂直居中的几种方式，水平垂直居中的集中方式](https://github.com/ClimbYU/css-layout)
    #### [页面布局----转载](https://www.cnblogs.com/best/category/313045.html)
-   #### [重置浏览器默认样式]
+   #### [设置rem]
    #### [事件循环：eventLoop]
 ### 3.网络部分
   #### cookie与localStorage
