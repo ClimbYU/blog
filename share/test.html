@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #rotateDiv {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      transform-origin: center center;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div id="rotateDiv"></div>
+
+  <script>
+    const rotateDiv = document.getElementById('rotateDiv');
+    let isDragging = false;
+    let startAngle = 0;
+
+    rotateDiv.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startAngle = getAngle(e);
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        const currentAngle = getAngle(e);
+        const rotationAngle = currentAngle - startAngle;
+        rotateDiv.style.transform = `rotate(${rotationAngle}deg)`;
+        startAngle = currentAngle;
+
+        // 判断顺时针还是逆时针
+        if (rotationAngle > 0) {
+          console.log('顺时针');
+        } else if (rotationAngle < 0) {
+          console.log('逆时针');
+        }
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    function getAngle(e) {
+      const rect = rotateDiv.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const deltaX = e.clientX - centerX;
+      const deltaY = e.clientY - centerY;
+      return (Math.atan2(deltaY, deltaX) * 180) / Math.PI;
+    }
+  </script>
+</body>
+</html>
