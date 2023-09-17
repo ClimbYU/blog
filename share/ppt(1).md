@@ -524,6 +524,119 @@ Animation（动画）:
 3. 关于perspective
 
    ![图片](https://i7x7p5b7.stackpathcdn.com/codrops/wp-content/uploads/2014/12/perspective-distance.png?x67760)
+   
+   ```html
+   
+    <div class="box-container">
+        <div class="box perspective">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cube pers250">
+            <div class="face front">1</div>
+            <div class="face back">2</div>
+            <div class="face right">3</div>
+            <div class="face left">4</div>
+            <div class="face top">5</div>
+            <div class="face bottom">6</div>
+        </div>
+    </div>
+
+   ```
+   ```css
+    html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            background-color: #f34e23;
+            margin: 0 auto;
+            margin-top: 200px;
+            display: flex;
+        }
+
+        /* 必须放父级才生效 */
+        .box-container {
+            perspective: 800px;
+        }
+
+        .perspective {
+            transform: translateZ(300px);
+            transform-style: preserve-3d;
+        }
+
+        /* Shorthand classes for different perspective values */
+        .pers250 {
+            perspective: 250px;
+        }
+
+        /* Define the container div, the cube div, and a generic face */
+        .container {
+            width: 200px;
+            height: 200px;
+            margin: 150px auto 0;
+            border: none;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            backface-visibility: visible;
+            perspective-origin: 150% 150%;
+            transform-style: preserve-3d;
+        }
+
+        .face {
+            display: block;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: none;
+            line-height: 100px;
+            font-family: sans-serif;
+            font-size: 60px;
+            color: white;
+            text-align: center;
+        }
+
+        /* Define each face based on direction */
+        .front {
+            background: rgba(0, 0, 0, 0.3);
+            transform: translateZ(50px);
+        }
+
+        .back {
+            background: rgba(0, 255, 0, 1);
+            color: black;
+            transform: rotateY(180deg) translateZ(50px);
+        }
+
+        .right {
+            background: rgba(196, 0, 0, 0.7);
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .left {
+            background: rgba(0, 0, 196, 0.7);
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .top {
+            background: rgba(196, 196, 0, 0.7);
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .bottom {
+            background: rgba(196, 0, 196, 0.7);
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+   ```
 4. 关于translate旋转
 
  ![图片](https://images2015.cnblogs.com/blog/744482/201610/744482-20161019161435529-1814249230.png)
