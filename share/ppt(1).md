@@ -352,7 +352,8 @@ Animation（动画）:
             transition: all linear 0.3s;
         }
 ```
-```js let startPosX, startPosY;
+```js 
+        let startPosX, startPosY;
         let eleX, eleY;
         let rotateDeg = 0;
         let flag = false
@@ -370,36 +371,38 @@ Animation（动画）:
         console.log(boundClient, eleX, eleY)
 
         rotate.addEventListener('mousemove', (e) => {
-            if(flag){
-                const center2Start = calculateDistance(eleX,eleY,startPosX,startPosY)
-                // const moveX = e.pageX - startPosX
-                // const moveY = e.pageY - startPosY
-                const center2End = calculateDistance(eleX,eleY,e.pageX,e.pageY)
-                const start2end = calculateDistance(startPosX,startPosY,e.pageX,e.pageY)
-                
-                rotateDeg += getRotate(center2End,center2Start,start2end)
+            if (flag) {
+                const center2Start = calculateDistance(eleX, eleY, startPosX, startPosY)
+                const center2End = calculateDistance(eleX, eleY, e.pageX, e.pageY)
+                const start2end = calculateDistance(startPosX, startPosY, e.pageX, e.pageY)
+                const isClockwise = calculateAngle(
+                    { x: startPosX, y: startPosY },
+                    { x: e.pageX, y: e.pageY }
+                )
+                if (isClockwise) {
+                    rotateDeg += getRotate(center2End, center2Start, start2end)
+                } else {
+                    rotateDeg -= getRotate(center2End, center2Start, start2end)
+                }
                 rotate.style.transform = `rotate(${rotateDeg}deg)`;
                 startPosY = e.pageY
                 startPosX = e.pageX
             }
         }, false)
         rotate.addEventListener('mouseup', (e) => {
-            // startPosX = e.pageX
-            // startPosY = e.pageY
-            console.log(rotateDeg)
             flag = false
         }, false)
         function calculateDistance(x1, y1, x2, y2) {
             const deltaX = x2 - x1;
             const deltaY = y2 - y1;
-            
+
             // 使用 Math.sqrt 函数计算平方根
             const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-            
+
             return distance;
         }
 
-        function getRotate(a,b,c){
+        function getRotate(a, b, c) {
             // 计算余弦值
             const cosTheta = (a * a + b * b - c * c) / (2 * a * b);
 
@@ -408,10 +411,116 @@ Animation（动画）:
 
             // 将弧度转换为度数
             const degrees = (radians * 180) / Math.PI;
+
             return degrees
+        }
+        function calculateAngle(A, B) {
+            // 计算向量CA和CB
+            var vectorCA = { x: A.x - eleX, y: A.y - eleY };
+            var vectorCB = { x: B.x - eleX, y: B.y - eleY };
+
+            // 计算向量叉积
+            var crossProduct = vectorCA.x * vectorCB.y - vectorCA.y * vectorCB.x;
+
+            // 如果叉积为正，夹角是逆时针形成；如果为负，夹角是顺时针形成
+            if (crossProduct > 0) {
+                console.log("顺时针");
+                return true
+            } else {
+                console.log("逆时针");
+                return false
+            }
         }
 
 ```
+
+4. 轮播图或pick组件的滑动（这两种滑动一般不使用自带的滑动即高度一定设置overflow：auto，而是使用transform：translate（）这种兼容性更好）
+
+```html
+    <div class="box">
+        <div class="box1-left item">
+        </div>
+        <div class="box1-middle item">
+        </div>
+        <div class="box1-right item"></div>
+    </div>
+
+```
+```css
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 200px;
+            display: flex;
+        }
+
+        .box1-left {
+            width: 200px;
+            height: 200px;
+            background-color: forestgreen;
+            border-radius: 15px;
+        }
+
+        .box1-middle {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(114, 22, 83);
+            border-radius: 15px;
+        }
+
+        .box1-right {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(204, 207, 24);
+            border-radius: 15px;
+        }
+
+        .item {
+            transition: all linear 0.4s;
+            flex-shrink: 0;
+        }
+
+```
+```js
+        let startX = 0;
+        let translateX = 0;
+        let flag = false
+        const box = document.querySelector('.box')
+        const items = document.querySelectorAll('.item')
+        const itemWidth = document.querySelector('.item').clientWidth
+        document.addEventListener('mousedown', (e) => {
+            flag = true
+            startX = e.pageX
+        }, false)
+        document.addEventListener('mousemove', (e) => {
+            if (flag) {
+                translateX += e.pageX - startX
+                console.log(translateX, itemWidth * 2)
+                if (translateX <= -itemWidth * 2) {
+                    translateX = -itemWidth * 2
+                } else if (translateX > 0) {
+                    translateX = 0
+                }
+                items.forEach((item) => {
+                    item.style.transform = `translateX(${translateX}px)`
+                })
+                startX = e.pageX
+            }
+        }, false)
+        document.addEventListener('mouseup', (e) => {
+            flag = false
+        }, false)
+
+```
+
 3. 关于perspective
 
    ![图片](https://i7x7p5b7.stackpathcdn.com/codrops/wp-content/uploads/2014/12/perspective-distance.png?x67760)
@@ -423,3 +532,4 @@ Animation（动画）:
 
 ### 4. 一些常用的动画库
 1. GreenSock Animation Platform (https://greensock.com/)
+

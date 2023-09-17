@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,101 +12,82 @@
             margin: 0;
         }
 
-        .rotate-left {
+        .box {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 0 auto;
             margin-top: 200px;
-            margin-left: 100px;
+            display: flex;
+        }
+
+        .box1-left {
             width: 200px;
             height: 200px;
             background-color: forestgreen;
             border-radius: 15px;
-            transition: all linear 0.3s;
+        }
+
+        .box1-middle {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(114, 22, 83);
+            border-radius: 15px;
+        }
+
+        .box1-right {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(204, 207, 24);
+            border-radius: 15px;
+        }
+
+        .item {
+            transition: all linear 0.4s;
+            flex-shrink: 0;
         }
     </style>
 </head>
+
 <body>
-    <div class="rotate">
-        <div class="rotate-left">
+    <div class="box">
+        <div class="box1-left item">
         </div>
+        <div class="box1-middle item">
+        </div>
+        <div class="box1-right item"></div>
     </div>
     <script>
-        let startPosX, startPosY;
-        let eleX, eleY;
-        let rotateDeg = 0;
+        let startX = 0;
+        let translateX = 0;
         let flag = false
-        const rotate = document.querySelector('.rotate-left')
-        // 获取元素点击原始坐标
-        rotate.addEventListener('mousedown', (e) => {
+        const box = document.querySelector('.box')
+        const items = document.querySelectorAll('.item')
+        const itemWidth = document.querySelector('.item').clientWidth
+        document.addEventListener('mousedown', (e) => {
             flag = true
-            startPosX = e.pageX
-            startPosY = e.pageY
+            startX = e.pageX
         }, false)
-        // 获取元素中心点坐标
-        const boundClient = rotate.getBoundingClientRect()
-        eleX = boundClient.width / 2 + boundClient.x
-        eleY = boundClient.height / 2 + boundClient.y
-        console.log(boundClient, eleX, eleY)
-
-        rotate.addEventListener('mousemove', (e) => {
-            if(flag){
-                const center2Start = calculateDistance(eleX,eleY,startPosX,startPosY)
-                // const moveX = e.pageX - startPosX
-                // const moveY = e.pageY - startPosY
-                const center2End = calculateDistance(eleX,eleY,e.pageX,e.pageY)
-                const start2end = calculateDistance(startPosX,startPosY,e.pageX,e.pageY)
-                const isClockwise = getClockwiseOrNot(
-                    {X:startPosX,Y:startPosY},
-                    {X:e.pageX,Y:e.pageY}
-                )
-                // if(e.pageX - startPosX < 0 || e.pageY - startPosY < 0){
-                //     rotateDeg -= getRotate(center2End,center2Start,start2end)
-                // }else{
-                //     rotateDeg += getRotate(center2End,center2Start,start2end)
-                // }
-                rotateDeg += getRotate(center2End,center2Start,start2end)
-                rotate.style.transform = `rotate(${rotateDeg}deg)`;
-                startPosY = e.pageY
-                startPosX = e.pageX
+        document.addEventListener('mousemove', (e) => {
+            if (flag) {
+                translateX += e.pageX - startX
+                console.log(translateX, itemWidth * 2)
+                if (translateX <= -itemWidth * 2) {
+                    translateX = -itemWidth * 2
+                } else if (translateX > 0) {
+                    translateX = 0
+                }
+                items.forEach((item) => {
+                    item.style.transform = `translateX(${translateX}px)`
+                })
+                startX = e.pageX
             }
         }, false)
-        rotate.addEventListener('mouseup', (e) => {
-            // startPosX = e.pageX
-            // startPosY = e.pageY
-            // console.log(rotateDeg)
-            // startPosY = e.pageY
-            // startPosX = e.pageX
+        document.addEventListener('mouseup', (e) => {
             flag = false
         }, false)
-        function calculateDistance(x1, y1, x2, y2) {
-            const deltaX = x2 - x1;
-            const deltaY = y2 - y1;
-            
-            // 使用 Math.sqrt 函数计算平方根
-            const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-            
-            return distance;
-        }
-
-        function getRotate(a,b,c){
-            // 计算余弦值
-            const cosTheta = (a * a + b * b - c * c) / (2 * a * b);
-
-            // 使用反余弦函数计算角度（弧度）
-            const radians = Math.acos(cosTheta);
-
-            // 将弧度转换为度数
-            const degrees = (radians * 180) / Math.PI;
-            
-            return degrees
-        }
-        function getClockwiseOrNot(pointB, pointC){
-                const X1 = (pointB.X - eleX);
-                const Y1 = (pointB.Y - eleY);
-                const X2 = (pointC.X - eleX);
-                const Y2 = (pointC.Y - eleY);                   // 分别求出AB,AC的向量坐标表示
-                var direct = (X1 * Y2) - (Y1 * X2); 
-                console.log(direct > 0 ? '顺时针' : '逆时针')
-        }
     </script>
-    
+
 </body>
+
 </html>
