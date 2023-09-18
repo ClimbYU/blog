@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      margin: 0 auto;
+      margin-top: 200px;
+      display: flex;
+      border: 1px solid rebeccapurple;
+      user-select: none;
+    }
+
+    .box1-left {
+      width: 200px;
+      height: 200px;
+      background-color: forestgreen;
+      border-radius: 15px;
+    }
+
+    .box1-middle {
+      width: 200px;
+      height: 200px;
+      background-color: rgb(114, 22, 83);
+      border-radius: 15px;
+    }
+
+    .box1-right {
+      width: 200px;
+      height: 200px;
+      background-color: rgb(204, 207, 24);
+      border-radius: 15px;
+    }
+
+    .item {
+      /* transition: all linear 0.4s; */
+      flex-shrink: 0;
+    }
+
+    .container {
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="box1-left item">
+    </div>
+    <div class="box1-middle item">
+    </div>
+    <div class="box1-right item"></div>
+  </div>
+  <!-- <div class="container">士大夫士大夫士大夫士大夫士大夫撒旦</div> -->
+</body>
+<script>
+  let startX = 0;
+  let translateX = 0;
+  let flag = false
+  const box = document.querySelector('.box')
+  const container = document.querySelector('.container')
+  const items = document.querySelectorAll('.item')
+  const itemWidth = document.querySelector('.item').clientWidth
+  // box.addEventListener('touchstart', (event) => {
+  //   console.log('mousedown')
+  //   flag = true
+  //   const { touches } = event;
+  //   const touches1 = touches[0]
+  //   const { pageX } = touches1
+  //   startX = pageX
+  // }, false)
+  // box.addEventListener('touchmove', (event) => {
+  //   if (flag) {
+  //     console.log('mousemove')
+  //     const { touches } = event;
+  //     const touches1 = touches[0]
+  //     const { pageX } = touches1
+  //     translateX += pageX - startX
+  //     if (translateX <= -itemWidth * 2) {
+  //       translateX = -itemWidth * 2
+  //     } else if (translateX > 0) {
+  //       translateX = 0
+  //     }
+  //     items.forEach((item) => {
+  //       item.style.transform = `translateX(${translateX}px)`
+  //     })
+  //     startX = pageX
+  //   }
+  // }, false)
+  // box.addEventListener('touchend', (e) => {
+  //   console.log('mouseup')
+  //   flag = false
+  // }, true)
+
+
+  document.addEventListener('mousedown', (event) => {
+    console.log('mousedown')
+    flag = true
+    const { pageX } = event
+    startX = pageX
+  }, false)
+  document.addEventListener('mousemove', (event) => {
+    if (flag) {
+      console.log('mousemove')
+      const { pageX } = event
+      translateX += pageX - startX
+      if (translateX <= -itemWidth * 2) {
+        translateX = -itemWidth * 2
+      } else if (translateX > 0) {
+        translateX = 0
+      }
+      items.forEach((item) => {
+        item.style.transform = `translateX(${translateX}px)`
+      })
+      startX = pageX
+    }
+  }, false)
+  document.addEventListener('mouseup', (e) => {
+    console.log('mouseup')
+    flag = false
+  }, true)
+
+
+  // container.addEventListener('mousedown', (event) => {
+  //   console.log('mousedown')
+  // }, false)
+  // container.addEventListener('mousemove', (event) => {
+  //   console.log('mousemove')
+  // }, false)
+  // container.addEventListener('mouseup', (e) => {
+  //   console.log('mouseup')
+  // }, true)
+
+</script>
+
+</html>

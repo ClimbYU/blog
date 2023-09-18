@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .test1 {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      border-radius: 15px;
+    }
+
+    .openUpRight {
+      animation: openUpRight 2s alternate infinite;
+    }
+
+    @keyframes openUpRight {
+      0% {
+        transform-origin: top right;
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform-origin: top right;
+        transform: rotate(-110deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="test1 openUpRight"></div>
+</body>
+
+</html>

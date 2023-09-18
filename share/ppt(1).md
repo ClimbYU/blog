@@ -460,6 +460,7 @@ Animation（动画）:
             margin: 0 auto;
             margin-top: 200px;
             display: flex;
+            user-select: none;
         }
 
         .box1-left {

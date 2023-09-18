@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .process-box {
+      width: 350px;
+      height: 20px;
+      border-radius: 20px;
+      position: relative;
+      border: 1px solid red;
+      transition: all linear;
+    }
+
+    .process-content {
+      height: 100%;
+      border-radius: 20px;
+      background-color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="process-box">
+    <div class="process-content" id="content"></div>
+  </div>
+</body>
+<script>
+  const content = document.getElementById('content')
+  let timer = null
+  let width = 0
+  function process() {
+    timer = setInterval(() => {
+      if (width >= 100) {
+        clearInterval(timer);
+      } else {
+        width += 12;
+        if (width > 100) {
+          width = 100
+        }
+        content.style.width = width + '%';
+      }
+    }, 200)
+  }
+
+  process()
+</script>
+
+</html>

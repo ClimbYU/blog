@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .test2 {
+      top: 0;
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: rebeccapurple;
+      border-radius: 15px;
+    }
+
+    .rotate {
+      position: relative;
+      margin-left: 300px;
+    }
+
+    .rotate-left {
+      width: 200px;
+      height: 200px;
+      background-color: forestgreen;
+      border-radius: 15px;
+    }
+
+    .rotateLeft {
+      animation: rotateLeft 2s alternate infinite;
+    }
+
+    @keyframes rotateLeft {
+      0% {
+        opacity: 1;
+        transform-origin: 0 0;
+        transform: perspective(800px) rotateY(0deg) translateZ(0px);
+      }
+
+      100% {
+        opacity: 0;
+        transform-origin: 50% 0;
+        transform: perspective(800px) rotateY(-180deg) translateZ(300px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rotate">
+    <div class="rotate-left">
+
+    </div>
+    <div class="test2 rotateLeft">
+    </div>
+  </div>
+</body>
+
+</html>
