@@ -1,3 +1,6 @@
+###  
+前端动画可以通过CSS3的过渡和关键帧动画、JavaScript的动画库（如GreenSock Animation Platform）、HTML5的canvas元素、SVG（可缩放矢量图形）以及其他前端技术来实现。这些动画可以是简单的渐变，也可以是复杂的交互式3D效果
+
 ### 1. 常用的css变换
 1. 呼吸态效果
 ```css
@@ -99,7 +102,68 @@
     }
 
 ```
-4. 加载动画
+4. loading效果
+```html
+  <div class="box">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </div>
+```
+```css
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 300px;
+      height: 300px;
+      margin: 200px auto 0;
+      display: flex;
+    }
+
+    .box1 {
+      width: 10px;
+      height: 10px;
+      background-color: rgb(255, 0, 0);
+      border-radius: 50%;
+      margin-right: 10px;
+      animation: boxma 1s 0.2s infinite alternate;
+    }
+
+    .box2 {
+      width: 10px;
+      height: 10px;
+      background-color: rgb(10, 241, 125);
+      border-radius: 50%;
+      margin-right: 10px;
+      animation: boxma 1s 0.5s infinite alternate;
+    }
+
+    .box3 {
+      width: 10px;
+      height: 10px;
+      background-color: rgb(28, 3, 250);
+      border-radius: 50%;
+      margin-right: 10px;
+      animation: boxma 1s 0.8s infinite alternate;
+    }
+
+    @keyframes boxma {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+```
+
+5. 加载动画
 ```html
         <div class="process-box">
             <div class="process-content" id="content"></div>
@@ -144,7 +208,7 @@
         process()
 
 ```
-5. 有趣的动画
+6. 有趣的动画
 ```html
 <div class="test1 openUpRight">
 ```
@@ -180,7 +244,6 @@ Transition（过渡）：
 Animation（动画）:
   适用场景：animation 更为灵活，适用于复杂的、循环的、多步骤的动画效果，可以控制关键帧、延迟、持续时间、重复次数等各个方面。它适用于需要更高度自定义和控制的动画场
 ```
-### 2.svg动画
 ### 3. 浅谈一下3D变换
 1. 翻书效果
 ```html
@@ -328,6 +391,129 @@ Animation（动画）:
         }
     }
 ```
+
+
+
+3. 关于perspective
+
+   ![图片](https://i7x7p5b7.stackpathcdn.com/codrops/wp-content/uploads/2014/12/perspective-distance.png?x67760)
+   
+   ```html
+   
+    <div class="box-container">
+        <div class="box perspective">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cube pers250">
+            <div class="face front">1</div>
+            <div class="face back">2</div>
+            <div class="face right">3</div>
+            <div class="face left">4</div>
+            <div class="face top">5</div>
+            <div class="face bottom">6</div>
+        </div>
+    </div>
+
+   ```
+   ```css
+    html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            background-color: #f34e23;
+            margin: 0 auto;
+            margin-top: 200px;
+            display: flex;
+        }
+
+        /* 必须放父级才生效 */
+        .box-container {
+            perspective: 800px;
+        }
+
+        .perspective {
+            transform: translateZ(300px);
+            transform-style: preserve-3d;
+        }
+
+        /* Shorthand classes for different perspective values */
+        .pers250 {
+            perspective: 250px;
+        }
+
+        /* Define the container div, the cube div, and a generic face */
+        .container {
+            width: 200px;
+            height: 200px;
+            margin: 150px auto 0;
+            border: none;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            backface-visibility: visible;
+            perspective-origin: 150% 150%;
+            transform-style: preserve-3d;
+        }
+
+        .face {
+            display: block;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: none;
+            line-height: 100px;
+            font-family: sans-serif;
+            font-size: 60px;
+            color: white;
+            text-align: center;
+        }
+
+        /* Define each face based on direction */
+        .front {
+            background: rgba(0, 0, 0, 0.3);
+            transform: translateZ(50px);
+        }
+
+        .back {
+            background: rgba(0, 255, 0, 1);
+            color: black;
+            transform: rotateY(180deg) translateZ(50px);
+        }
+
+        .right {
+            background: rgba(196, 0, 0, 0.7);
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .left {
+            background: rgba(0, 0, 196, 0.7);
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .top {
+            background: rgba(196, 196, 0, 0.7);
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .bottom {
+            background: rgba(196, 0, 196, 0.7);
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+   ```
+4. 关于translate旋转
+
+ ![图片](https://images2015.cnblogs.com/blog/744482/201610/744482-20161019161435529-1814249230.png)
+
 4. 旋转角度问题
 ```html
     <div class="rotate">
@@ -522,128 +708,11 @@ Animation（动画）:
 
 ```
 
-3. 关于perspective
-
-   ![图片](https://i7x7p5b7.stackpathcdn.com/codrops/wp-content/uploads/2014/12/perspective-distance.png?x67760)
-   
-   ```html
-   
-    <div class="box-container">
-        <div class="box perspective">
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="cube pers250">
-            <div class="face front">1</div>
-            <div class="face back">2</div>
-            <div class="face right">3</div>
-            <div class="face left">4</div>
-            <div class="face top">5</div>
-            <div class="face bottom">6</div>
-        </div>
-    </div>
-
-   ```
-   ```css
-    html,
-        body {
-            padding: 0;
-            margin: 0;
-        }
-
-        .box {
-            width: 200px;
-            height: 200px;
-            overflow: hidden;
-            background-color: #f34e23;
-            margin: 0 auto;
-            margin-top: 200px;
-            display: flex;
-        }
-
-        /* 必须放父级才生效 */
-        .box-container {
-            perspective: 800px;
-        }
-
-        .perspective {
-            transform: translateZ(300px);
-            transform-style: preserve-3d;
-        }
-
-        /* Shorthand classes for different perspective values */
-        .pers250 {
-            perspective: 250px;
-        }
-
-        /* Define the container div, the cube div, and a generic face */
-        .container {
-            width: 200px;
-            height: 200px;
-            margin: 150px auto 0;
-            border: none;
-        }
-
-        .cube {
-            width: 100%;
-            height: 100%;
-            backface-visibility: visible;
-            perspective-origin: 150% 150%;
-            transform-style: preserve-3d;
-        }
-
-        .face {
-            display: block;
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border: none;
-            line-height: 100px;
-            font-family: sans-serif;
-            font-size: 60px;
-            color: white;
-            text-align: center;
-        }
-
-        /* Define each face based on direction */
-        .front {
-            background: rgba(0, 0, 0, 0.3);
-            transform: translateZ(50px);
-        }
-
-        .back {
-            background: rgba(0, 255, 0, 1);
-            color: black;
-            transform: rotateY(180deg) translateZ(50px);
-        }
-
-        .right {
-            background: rgba(196, 0, 0, 0.7);
-            transform: rotateY(90deg) translateZ(50px);
-        }
-
-        .left {
-            background: rgba(0, 0, 196, 0.7);
-            transform: rotateY(-90deg) translateZ(50px);
-        }
-
-        .top {
-            background: rgba(196, 196, 0, 0.7);
-            transform: rotateX(90deg) translateZ(50px);
-        }
-
-        .bottom {
-            background: rgba(196, 0, 196, 0.7);
-            transform: rotateX(-90deg) translateZ(50px);
-        }
-   ```
-4. 关于translate旋转
-
- ![图片](https://images2015.cnblogs.com/blog/744482/201610/744482-20161019161435529-1814249230.png)
-
+### 3. svg动画
 
 
 ### 4. 一些常用的动画库
 1. GreenSock Animation Platform (https://greensock.com/)
-
+2. animejs(https://animejs.com/documentation/)Anime.js是一个轻量级的JavaScript动画库，专注于Web动画的创建。它易于使用，支持各种动画类型，包括CSS属性、变换、颜色等。
+3. Popmotion(https://popmotion.io/) Popmotion是一个用于创建流畅的Web动画和交互的库。它支持各种特性，包括弹簧动画、物理模拟等
+4. CreateJS(https://createjs.com/) CreateJS是一组库，包括EaselJS、TweenJS、SoundJS等，专注于HTML5游戏和交互式内容的创建。EaselJS用于绘制和呈现图形，TweenJS用于动画，SoundJS用于音频处理

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 300px;
+      height: 300px;
+      margin: 200px auto 0;
+      display: flex;
+    }
+
+    .box1 {
+      width: 10px;
+      height: 10px;
+      background-color: rgb(255, 0, 0);
+      border-radius: 50%;
+      margin-right: 10px;
+      animation: boxma 1s 0.2s infinite alternate;
+    }
+
+    .box2 {
+      width: 10px;
+      height: 10px;
+      background-color: rgb(10, 241, 125);
+      border-radius: 50%;
+      margin-right: 10px;
+      animation: boxma 1s 0.5s infinite alternate;
+    }
+
+    .box3 {
+      width: 10px;
+      height: 10px;
+      background-color: rgb(28, 3, 250);
+      border-radius: 50%;
+      margin-right: 10px;
+      animation: boxma 1s 0.8s infinite alternate;
+    }
+
+    @keyframes boxma {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </div>
+</body>
+
+</html>
