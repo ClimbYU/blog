@@ -1,5 +1,5 @@
 ###  
-前端动画可以通过CSS3的过渡和关键帧动画、JavaScript的动画库（如GreenSock Animation Platform）、HTML5的canvas元素、SVG（可缩放矢量图形）以及其他前端技术来实现。这些动画可以是简单的渐变，也可以是复杂的交互式3D效果
+前端动画可以通过CSS3的过渡（transition）和关键帧动画（@keyframes）、JavaScript的动画库（如GreenSock Animation Platform）、HTML5的canvas元素、SVG（可缩放矢量图形）以及其他前端技术来实现。这些动画可以是简单的渐变，也可以是复杂的交互式3D效果
 
 ### 1. 常用的css变换
 1. 呼吸态效果
@@ -708,7 +708,7 @@ Animation（动画）:
 
 ```
 
-### 3. svg动画
+### 3. svg动画(https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial/Getting_Started)
 
 
 ### 4. 一些常用的动画库
